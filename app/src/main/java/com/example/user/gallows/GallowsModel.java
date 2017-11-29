@@ -7,11 +7,13 @@ package com.example.user.gallows;
 class GallowsModel {
     private String secretWord;
     private String guessedWord;
-
+    private int mistakesCount;
 
 
     public GallowsModel() {
         secretWord = "apple";
+        mistakesCount = 0;
+
     }
 
 
@@ -21,5 +23,17 @@ class GallowsModel {
 
     public String getGuessedWord() {
         return guessedWord;
+    }
+
+    public void setGuessedWord(String guessedWord) {
+        this.guessedWord = guessedWord;
+    }
+
+    public void setMistakesCount(int mistakesCount) {
+        this.mistakesCount = mistakesCount;
+    }
+
+    public int getMistakesCount() {
+        return mistakesCount;
     }
 }
