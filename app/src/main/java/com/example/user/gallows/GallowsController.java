@@ -27,7 +27,11 @@ class GallowsController {
     }
 
 
+    public void add(String word) {
 
+        model.setSecretWord(word);
+
+    }
 
 
 
@@ -52,4 +56,6 @@ class GallowsController {
         model.setMistakesCount(model.getMistakesCount() + mistake);
         model.setGuessedWord(new String(guessedWordArray));
     }
+
+
 }

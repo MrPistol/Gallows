@@ -13,8 +13,10 @@ public class MainActivity extends AppCompatActivity {
     TextView secretWordsTextView;
     TextView mistakesCountTextView;
     EditText guessEditText;
+    EditText addWordET;
     Button submitButton;
     Button restartButton;
+    Button addWordButton;
     GallowsController controller;
     GallowsModel model;
 
@@ -25,12 +27,14 @@ public class MainActivity extends AppCompatActivity {
         secretWordsTextView = findViewById(R.id.secret_word_text_view);
         mistakesCountTextView = findViewById(R.id.mistakes_count_text_view);
         guessEditText = findViewById(R.id.guess_edit_text);
+        addWordET = findViewById(R.id.add_word_et);
         submitButton = findViewById(R.id.submit_button);
         restartButton = findViewById(R.id.restart_button);
+        addWordButton = findViewById(R.id.add_word_button);
         model = new GallowsModel();
         controller = new GallowsController(model);
 
-        showGuessedWord();
+
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,16 +53,25 @@ public class MainActivity extends AppCompatActivity {
                 newGame();
                 showGuessedWord();
 
+
+            }
+        });
+
+        addWordButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (addWordET.getText().toString().length() != 0) {
+
+
+                    controller.add(addWordET.getText().toString());
+
+
+                }
             }
         });
 
     }
 
-    private void clearAll() {
-
-
-
-    }
 
     private void newGame() {
         model = new GallowsModel();

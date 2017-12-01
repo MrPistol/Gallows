@@ -11,7 +11,7 @@ class GallowsModel {
 
 
     public GallowsModel() {
-        secretWord = "apple";
+        secretWord = "";
         mistakesCount = 0;
 
     }
@@ -35,5 +35,9 @@ class GallowsModel {
 
     public int getMistakesCount() {
         return mistakesCount;
+    }
+
+    public void setSecretWord(String secretWord) {
+        this.secretWord = secretWord;
     }
 }
